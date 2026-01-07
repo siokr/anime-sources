@@ -203,21 +203,24 @@
                 "factoryId": "web-selector",
                 "version": 2,
                 "arguments": {
-                    "name": "稀饭动漫",
+                    "name": "稀饭动漫.com",
                     "description": "",
-                    "iconUrl": "https://dm1.xfdm.pro/upload/site/20240308-1/813e41f81d6f85bfd7a44bf8a813f9e5.png",
+                    "iconUrl": "https://dm.xifanacg.com/favicon.ico",
                     "searchConfig": {
-                        "searchUrl": "https://dm1.xfdm.pro/search.html?wd={keyword}",
+                        "searchUrl": "https://dm.xifanacg.com/search.html?wd={keyword}",
                         "searchUseOnlyFirstWord": true,
-                        "rawBaseUrl": "",
+                        "searchRemoveSpecial": true,
+                        "searchUseSubjectNamesCount": 1,
+                        "rawBaseUrl": "https://dm.xifanacg.com/",
+                        "requestInterval": 3000,
                         "subjectFormatId": "indexed",
                         "selectorSubjectFormatA": {
-                            "selectLists": "div.video-info-header > a",
+                            "selectLists": ".vod-detail.style-detail.cor4.search-list",
                             "preferShorterName": true
                         },
                         "selectorSubjectFormatIndexed": {
-                            "selectNames": "body > .box-width .search-box .thumb-content > .thumb-txt",
-                            "selectLinks": "body > .box-width .search-box .thumb-menu > a",
+                            "selectNames": ".vod-detail .vod-detail-info a h3",
+                            "selectLinks": ".vod-detail .vod-detail-info a",
                             "preferShorterName": true
                         },
                         "selectorSubjectFormatJsonPathIndexed": {
@@ -227,10 +230,10 @@
                         },
                         "channelFormatId": "index-grouped",
                         "selectorChannelFormatFlattened": {
-                            "selectChannelNames": ".anthology-tab > .swiper-wrapper a",
-                            "matchChannelName": "^(?<ch>.+?)(\\d+)?$",
-                            "selectEpisodeLists": ".anthology-list-box",
-                            "selectEpisodesFromList": "a",
+                            "selectChannelNames": ".anthology-tab .swiper-wrapper a",
+                            "matchChannelName": "^()?(?<ch>.+?)(\\d+)?$",
+                            "selectEpisodeLists": ".anthology-list-play.size",
+                            "selectEpisodesFromList": "li a",
                             "selectEpisodeLinksFromList": "",
                             "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
                         },
@@ -239,6 +242,9 @@
                             "selectEpisodeLinks": "",
                             "matchEpisodeSortFromName": "第\\s*(?<ep>.+)\\s*[话集]"
                         },
+                        "defaultResolution": "1080P",
+                        "defaultSubtitleLanguage": "CHS",
+                        "onlySupportsPlayers": [],
                         "filterByEpisodeSort": true,
                         "filterBySubjectName": true,
                         "selectMedia": {
@@ -251,11 +257,12 @@
                             "matchVideoUrl": "(^http(s)?:\\/\\/(?!.*http(s)?:\\/\\/).+((\\.mp4)|(\\.mkv)|(m3u8)).*(\\?.+)?)|(akamaized)|(bilivideo.com)",
                             "cookies": "quality=1080",
                             "addHeadersToVideo": {
-                                "referer": "",
-                                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+                                "referer": "https://dm.xifanacg.com/",
+                                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
                             }
                         }
-                    }
+                    },
+                    "tier": 2
                 }
             },
             {
@@ -572,4 +579,3 @@
         ]
     }
 }
-
